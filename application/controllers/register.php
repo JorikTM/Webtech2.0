@@ -116,11 +116,12 @@ class Register extends CI_Controller {
             'leeftijd_voorkeur' => $this->input->post('leef_voorkeur')
         );
         
-        $query = $this->db->insert('users', $data);
         
-        if($query->num_rows()){
+        if($this->db->insert('users', $data)){
             return true;
-        } else return false;
+        } else {
+            return false;
+        };
     }
     
 }
