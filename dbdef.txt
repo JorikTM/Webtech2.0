@@ -1,0 +1,63 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE users (
+	username VARCHAR ( 16 ) NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	voornaam VARCHAR ( 50 ) NOT NULL,
+	achternaam VARCHAR ( 50 ) NOT NULL,
+	geb_datum INTEGER NOT NULL,
+	mail VARCHAR ( 50 ) NOT NULL,
+	geslacht CHAR ( 1 ) CHECK ( geslacht IN ( 'F', 'M' ) ),
+	geslacht_voorkeur VARCHAR ( 2 ) CHECK ( geslacht_voorkeur IN ( 'F', 'M', 'MF' ) ),
+	leeftijd_voorkeur VARCHAR ( 5 ),
+	pers_type VARCHAR ( 50 ) NOT NULL,
+	pers_type_voorkeur VARCHAR ( 50 ),
+	beschrijving VARCHAR ( 500 ),
+	PRIMARY KEY ( username )
+);
+
+CREATE TABLE merken (
+	merknaam VARCHAR ( 50 ) NOT NULL,
+	merk_id INTEGER NOT NULL,
+	PRIMARY KEY ( merk_id )
+);
+	
+CREATE TABLE fotos (
+	foto_link VARCHAR ( 500 ) NOT NULL,
+	foto_id INTEGER NOT NULL,
+	PRIMARY KEY ( foto_id )
+);
+	
+CREATE TABLE likes (
+	liked_username VARCHAR ( 16 ) NOT NULL,
+	PRIMARY KEY ( liked_username )
+);
+	
+CREATE TABLE heeft_geliked (
+	like TINYINT( 1 ) NOT NULL DEFAULT ( 0 ) CHECK ( like IN ( 0, 1 )  ),
+	username VARCHAR ( 16 )	NOT NULL,
+	liked_username VARCHAR ( 16 ) NOT NULL,
+	PRIMARY KEY ( username, liked_username ),
+	FOREIGN KEY ( username ) REFERENCES users ( username ),
+	FOREIGN KEY ( liked_username ) REFERENCES likes ( liked_username )
+);
+
+CREATE TABLE fotolijst (
+	prof_foto TINYINT( 1 ) NOT NULL DEFAULT ( 0 ) CHECK ( prof_foto IN ( 0, 1 )  ),
+	foto_id INTEGER NOT NULL,
+	username VARCHAR ( 16 )	NOT NULL,
+	PRIMARY KEY ( username, foto_id ),
+	FOREIGN KEY ( username ) REFERENCES users ( username ),
+	FOREIGN KEY ( foto_id ) REFERENCES fotos ( foto_id )
+);
+	
+CREATE TABLE merk_voorkeur (
+	voorkeur TINYINT ( 1 ) NOT NULL DEFAULT ( 0 ) CHECK ( voorkeur IN ( 0, 1 )  ),	
+	username VARCHAR ( 16 )	NOT NULL,
+	merk_id INTEGER NOT NULL,
+	PRIMARY KEY ( username, merk_id ),
+	FOREIGN KEY ( username ) REFERENCES users ( username ),
+	FOREIGN KEY ( merk_id ) REFERENCES merken ( merk_id )
+);
+	
+	

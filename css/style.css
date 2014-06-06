@@ -1,0 +1,189 @@
+html,body{
+	width:1250px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#header img{
+	display:block;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#menu{
+	background-color:#FC0202;
+	text-align:center;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+#menu ul{
+	list-style-type:none;
+}
+
+#menu ul li{
+	display:inline;
+}
+
+#menu ul li a{
+	font-size:25px;
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+	padding: 18px 30px 18px 30px;
+}
+
+#menu ul li a:hover{
+	background-color:#FE4141;
+}
+
+#inleiding{
+	width:700px;
+	float:left;
+	padding:2em;
+	font-size:1.3em;
+	height:300px;
+}
+
+#footer{
+	position:relative;
+	clear:both;
+	height:50px;
+	background-color:#FC0202;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+#ftext{
+	color:white;
+	text-align:center;
+	font-size:1em;
+	padding-top:1em;
+}
+
+#shinypeople {
+	width:400px;
+	float:right;
+	padding:10px;
+	text-align:center;
+	color:#FE4141;
+	font-size:2em;
+	font-weight:bold;
+	height:300px;
+}
+
+.profiel{
+	position:relative;
+	clear:both;
+	background-color:#FE7373;
+	width:595px;
+	height:300px;
+	display:block;
+	margin:15px;
+	margin-bottom:30px;
+}
+
+#left{
+	float:left;
+}
+
+#right{
+	float:right;
+}
+
+/*CSS voor persoonlijkheidstest*/
+#testinleiding{
+	text-align: center;
+	font-size: 1.2em;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+
+.vraag{
+	margin-bottom: 0px;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+/*CSS voor loginpagina*/
+#login{
+	text-align: center;
+	margin: 4em;
+	font-size: 1em;
+}
+
+#login h2{
+	color: #FC0202;
+}
+
+form div{
+    padding: 2px;
+}
+
+/*CSS voor registreerpagina*/
+#registreren{
+	text-align: left;
+	margin-left: 6em;
+}
+
+.persoonlijktekst{
+	width: 250px;
+}
+
+#regtitel{
+	text-align: left;
+	margin-left: 6em;
+}
+
+#registreren input{
+	width: 100%;
+}
+
+#regtitel h2{
+	color: #FC0202;
+}
+
+#checkboxes{
+	width: 1000px;
+	text-align: left;
+}
+
+#checkboxes ul{
+    list-style-type: none;
+	display: inline-block;
+	float: left;
+	width: 150px;
+	text-align: left;
+}
+
+#checkboxes ul li input{
+	display: inline;
+	width: 30px;
+	padding-left: 0px;
+}
+
+#submitbutton{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#beschrijving{
+	height:5em;
+	width: 250px;
+	resize:none;
+	border-width:2px;
+}
+
+#testinleiding{
+	text-align: center;
+	font-size: 1.2em;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+
+.vraag{
+	margin-bottom: 0px;
+	font-weight: bold;
+	font-size: 1em;
+}

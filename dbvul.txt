@@ -1,0 +1,116 @@
+INSERT INTO merken(merk_id, merknaam) VALUES
+	(1, 'Coca-Cola'),
+	(2, 'Pepsi'),
+	(3, 'Nespresso'),
+	(4, 'Douwe Egberts'),
+	(5, 'Starbucks'),
+	(6, 'Apple'),
+	(7, 'Microsoft'),
+	(8, 'Philips'),
+	(9, 'Samsung'),
+	(10, 'HTC'),
+	(11, 'Sony'),
+	(12, 'Honig'),
+	(13, 'Conimex'),
+	(14, 'McDonald's'),
+	(15, 'Burger King'),
+	(16, 'Subway'),
+	(17, 'Unox'),
+	(18, 'Nike'),
+	(19, 'Adidas'),
+	(20, 'Ray-Ban'),
+	(21, 'G-Star'),
+	(22, 'McGreggor'),
+	(23, 'Zeeman'),
+	(24, 'Hema'),
+	(25, 'Scotch & Soda'),
+	(26, 'Lonsdale'),
+	(27, 'H&M'),
+	(28, 'Zara'),
+	(29, 'Elmex'),
+	(30, 'Colgate'),
+	(31, 'Jumbo'),
+	(32, 'Albert Heijn'),
+	(33, 'C1000'),
+	(34, 'BMW'),
+	(35, 'Audi'),
+	(36, 'Volkswagen'),
+	(37, 'Renault'),
+	(38, 'Ajax'),
+	(39, 'Feyenoord'),
+	(40, 'PSV'),
+	(41, 'Kit Kat'),
+	(42, 'Mars'),
+	(43, 'HBO'),
+	(44, 'RTL 4'),
+	(45, 'RTL 5'),
+	(46, 'Veronica'),
+	(47, 'Film 1'),
+	(48, 'Facebook'),
+	(49, 'Twitter'),
+	(50, 'Spotify');
+	
+INSERT INTO users(username, voornaam, achternaam, geb_datum, geslacht, geslacht_voorkeur, pers_type, pers_type_voorkeur, leeftijd_voorkeur, password) VALUES
+	('JTM11', 'Jorik', 'ter Molen', 20, 'M', 'F', 'I(80) N(70) T(60) J(55)', 'E(80) S(70) F(60) P(55)', '20-30', '7ea29d0e63b338f3010ac78ff44345e7'),
+	('lola12', 'Lotte', 'Laars', 32, 'F', 'M', 'E(70) N(60) T(70) P(80)', 'I(70) S(60) F(70) J(80)', '30-40', 'b37bf08f6406331250efc380acf3996d'),
+	('Tjirp34', 'Tjeerd', 'Beeksma', 33, 'M', 'MF', 'I(70) S(60) T(60) P(55)', 'E(70) N(60) F(60) J(55)', '20-30', 'd92d7ef40c090be45d8cfd40231f59ec'),
+	('CmOn23', 'Simon', 'van Olfband', 25, 'M', 'M', 'E(70) N(60) F(60) J(55)', 'I(70) S(60) T(60) P(55)', '30-40', '54b99d030a327bf742f3a6fd9cf8ccfb'),
+	('CandyShine', 'Anna', 'Wassenburg', 20, 'F', 'MF', 'I(55) N(70) F(55) J(70)', 'I(80) N(70) T(60) J(55)', '20-30', '7d3776698bb579feae7c74c55e78367a'),
+	('Daan123', 'Daan', 'Spatel', 24, 'M', 'F', 'E(80) S(70) F(55) P(60)', 'I(80) N(70) T(55) J(60)', '30-40', '860c7e364cfb1c98d571b002df0739f6'),
+	('JelmIsOp', 'Jelmer', 'Kant', 19, 'M', 'F', 'E(55) S(50) T(55) P(60)', 'I(55) N(50) F(55) J(60)', '20-30', '812c088c9141983ef8b4e7e48c4792cf'),
+	('keesbees', 'Kees', 'Klaaskvaak', 26, 'M', 'MF', 'E(60) S(60) T(60) P(60)', 'I(60) N(60) F(60) J(60)', '30-40', '4884d642c4e0ed6d414f3d8357644719'),
+	('Marie34', 'Marielle', 'de Koe', 38, 'F', 'M', 'I(60) N(60) F(60) J(60)', 'E(60) S(60) T(60) P(60)', '30-40', 'f93d596a53f3c3926927a8f1a6345206'),
+	('Caroline11', 'Caroline', 'van Rijthoven', 19, 'F', 'M', 'I(96) S(68) T(65) J(68)', 'E(96) N(68) F(65) P(68)', '20-30', '18c9ba15787bca70ccd33fa8099af947');
+	
+INSERT INTO likes(liked_username) VALUES
+	('JTM11'),
+	('lola12'),
+	('Tjirp34'),
+	('CmOn23'),
+	('CandyShine'),
+	('Daan123'),
+	('JelmIsOp'),
+	('keesbees'),
+	('Marie34'),
+	('Caroline11');
+	
+INSERT INTO heeft_geliked(username, liked_username, like) VALUES
+	('JTM11','CandyShine', 1),
+	('CandyShine','JTM11', 1),
+	('Tjirp34', 'lola12', 1),
+	('CmOn23', 'keesbees', 1);
+	
+INSERT INTO fotos(foto_link, foto_id) VALUES
+	('#link1', 1),
+	('#link2', 2);
+
+INSERT INTO fotolijst(username, foto_id, prof_foto) VALUES
+	('JTM11', 1, 1),
+	('lola12', 2, 1),
+	('Tjirp34', 1, 1),
+	('CmOn23', 1, 1),
+	('CandyShine', 2, 1),
+	('Daan123', 1, 1),
+	('JelmIsOp', 1, 1),
+	('keesbees', 1, 1),
+	('Marie34', 2, 1),
+	('Caroline11', 2, 1);
+	
+INSERT INTO merk_voorkeur(username, merk_id, voorkeur) VALUES
+	('JTM11', 1, 1),
+	('JTM11', 6, 1),
+	('lola12', 8, 1),
+	('Tjirp34', 23, 1),
+	('CmOn23', 50, 1),
+	('CandyShine', 6, 1),
+	('CandyShine', 1, 1),
+	('Daan123', 13, 1),
+	('JelmIsOp', 16, 1),
+	('keesbees', 17, 1),
+	('Marie34', 21, 1),
+	('Caroline11', 32, 1);
+	
+
+
+
+	
