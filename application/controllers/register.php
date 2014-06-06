@@ -105,19 +105,20 @@ class Register extends CI_Controller {
     public function add_user(){
         $data = array(
             'username' => $this->input->post('username'),
+            'password' => md5($this->input->post('password')),
             'voornaam' => $this->input->post('voornaam'),
             'achternaam' => $this->input->post('achternaam'),
-            'mail' => $this->input->post('mail'),
-            'password' => md5($this->input->post('password')),
-            'geslacht' => $this->input->post('geslacht'),
             'geb_datum' => $this->age_from_date($this->input->post('date')),
+            'mail' => $this->input->post('mail'),
+            'geslacht' => $this->input->post('geslacht'),
             'geslacht_voorkeur' => $this->input->post('ges_voorkeur'),
-            'beschrijving' => $this->input->post('beschrijving'),
-            'leeftijd_voorkeur' => $this->input->post('leef_voorkeur')
+            'leeftijd_voorkeur' => $this->input->post('leef_voorkeur'),
+            'beschrijving' => $this->input->post('beschrijving')
         );
         
+        $query = $this->db->insert('users', $data);
         
-        if($this->db->insert('users', $data)){
+        if($query->num_rows() > 0){
             return true;
         } else {
             return false;
